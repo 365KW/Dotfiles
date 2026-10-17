@@ -1,0 +1,10 @@
+@theme "theme.rasi"              
+@import "../../config.rasi"
+
+configuration {
+    modes: "drun,window";
+    display-drun: "Applications";
+    display-window: "Windows";
+
+    lines: 8;
+}

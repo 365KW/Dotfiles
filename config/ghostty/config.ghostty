@@ -1,0 +1,10 @@
+font-family = Cascadia Code NF
+gtk-single-instance = false
+theme = Catppuccin Mocha
+
+background-opacity = 0.72
+background-blur-radius = 20
+window-padding-x = 8
+window-padding-y = 4
+cursor-style = bar
+copy-on-select = clipboard

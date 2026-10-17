@@ -1,0 +1,18 @@
+* {
+    primary:              #F2F2F245;
+    on-primary:           #F2F2F2EE;
+    primary-container:    #F2F2F245;
+    on-primary-container: #F2F2F2EE;
+    secondary:            #F2F2F230;
+    on-secondary:         #F2F2F2EE;
+    surface:              #00000066;
+    on-surface:           #F2F2F2EE;
+    surface-variant:      #F2F2F211;
+    on-surface-variant:   #F2F2F2CC;
+    background:           #00000066;
+    on-background:        #F2F2F2EE;
+    background-selected:  #F2F2F245;
+    background-active:    #F2F2F230;
+    background-white:     #F2F2F211;
+    background-black:     #00000066;
+}

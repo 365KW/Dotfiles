@@ -1,0 +1,150 @@
+super + Return
+    ghostty
+
+super + d
+    rofi -show drun -theme "$HOME/.config/rofi/systems/myrofi/config.rasi"
+
+super + b
+    google-chrome-stable
+
+super + s
+    flameshot gui
+
+super + v
+    rofi -modi "clipboard:$HOME/.local/bin/greenclip print" -show clipboard -run-command '{cmd}'
+
+super + n
+    $HOME/.local/bin/rofi-wifi
+
+
+
+super + shift + q
+    bspc node -c
+
+super + shift + k
+    bspc node -k
+
+super + f
+    bspc node -t '~fullscreen'
+
+super + shift + space
+    bspc node -t '~floating'
+
+super + p
+    bspc node -t '~pseudo_tiled'
+
+super + shift + t
+    bspc node -g sticky
+
+super + space
+    bspc node -f last.local
+
+super + Tab
+    bspc node -f next.local
+
+super + shift + Tab
+    bspc node -f prev.local
+
+super + a
+    bspc node -f @parent
+
+super + {Left,Down,Up,Right}
+    bspc node -f {west,south,north,east}
+
+super + shift + {Left,Down,Up,Right}
+    bspc node -s {west,south,north,east}
+
+super + h
+    bspc node -p east
+
+super + g
+    bspc node -p south
+
+super + shift + p
+    bspc node -p cancel
+
+super + w
+    bspc desktop -l next
+
+super + {1-9,0}
+    bspc desktop -f '^{1-9,10}'
+
+super + shift + {1-9,0}
+    bspc node -d '^{1-9,10}'
+
+super + grave
+    bspc desktop -f last
+
+super + shift + grave
+    bspc node -d last && bspc desktop -f last
+
+super + bracketleft
+    bspc monitor -f prev
+
+super + bracketright
+    bspc monitor -f next
+
+super + shift + bracketleft
+    bspc node -m prev && bspc monitor -f prev
+
+super + shift + bracketright
+    bspc node -m next && bspc monitor -f next
+
+super + ctrl + r
+    bspc node @/ -R 90
+
+super + ctrl + shift + r
+    bspc node @/ -R 270
+
+super + ctrl + b
+    bspc node @/ -B
+
+super + ctrl + e
+    bspc node @/ -E
+
+super + r + {Left,Right,Up,Down}
+    bspc node -z {left,right,top,bottom} {-40 0,40 0,0 -40,0 40}
+
+super + r + shift + {Left,Right,Up,Down}
+    bspc node -z {left,right,top,bottom} {40 0,-40 0,0 40,0 -40}
+
+
+
+super + period
+    dunstctl close
+
+super + shift + period
+    dunstctl close-all
+
+
+super + shift + c
+    pkill -USR1 -x sxhkd
+
+super + shift + r
+    bspc wm -r
+
+super + shift + e
+    sh -c '[ "$(printf "yes\nno\n" | dmenu -p "Exit bspwm?")" = yes ] && pkill -x bspwm'
+
+super + shift + l
+    slock
+
+
+
+XF86AudioRaiseVolume
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+XF86AudioLowerVolume
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+XF86AudioMute
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+XF86AudioMicMute
+    wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+XF86MonBrightnessUp
+    brightnessctl set +5%
+
+XF86MonBrightnessDown
+    brightnessctl set 5%-

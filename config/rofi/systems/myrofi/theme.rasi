@@ -1,0 +1,101 @@
+@import "colors.rasi"
+
+* {
+    background-color:   transparent;
+    text-color:         @on-surface;
+    border:             0;
+    margin:             0;
+    padding:            0;
+    spacing:            0;
+    font:               "Segoe UI 11";
+}
+
+window {
+    transparency:       "real";
+    background-color:   @surface;
+    border:             2px solid;
+    border-color:       @primary;
+    border-radius:      14px;
+    width:              680px;
+    padding:            16px 20px;
+}
+
+mainbox {
+    spacing:            12px;
+    children:           [ inputbar, message, listview, mode-switcher ];
+}
+
+mode-switcher {
+    spacing:            4px;
+}
+
+button {
+    border-radius:      8px;
+    padding:            6px 12px;
+}
+
+button selected.normal {
+    background-color:   @primary-container;
+    text-color:         @on-primary-container;
+}
+
+inputbar {
+    background-color:   @surface-variant;
+    border-radius:      8px;
+    padding:            10px 14px;
+    spacing:            10px;
+    children:           [ entry ];
+}
+
+entry {
+    placeholder:        "Type to search";
+    placeholder-color:  @on-surface-variant;
+    text-color:         @on-surface;
+}
+
+listview {
+    lines:              8;
+    scrollbar:          false;
+    spacing:            4px;
+    columns:            1;
+    dynamic:            true;
+    layout:             vertical;
+}
+
+element {
+    border-radius:      8px;
+    padding:            8px 12px;
+    spacing:            10px;
+}
+
+element normal.normal {
+    background-color:   transparent;
+}
+
+element selected.normal {
+    background-color:   @primary-container;
+    text-color:         @on-primary-container;
+}
+
+element active.normal {
+    background-color:   @secondary;
+    text-color:         @on-secondary;
+}
+
+element urgent.normal {
+    background-color:   @primary-container;
+    text-color:         @on-primary-container;
+}
+
+element selected.urgent {
+    background-color:   @primary;
+    text-color:         @on-primary;
+}
+
+element-icon {
+    size:               24px;
+}
+
+element-text {
+    vertical-align:     0.5;
+}

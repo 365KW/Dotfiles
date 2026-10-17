@@ -1,0 +1,8 @@
+gtk-theme-name="WhiteSur-Dark"
+gtk-application-prefer-dark-theme=1
+gtk-icon-theme-name="kora"
+gtk-font-name="Segoe UI 10"
+gtk-cursor-theme-name="Adwaita"
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintmedium"

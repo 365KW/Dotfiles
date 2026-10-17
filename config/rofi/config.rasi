@@ -1,0 +1,29 @@
+configuration {
+    show-icons: true;
+    icon-theme: "kora";
+    application-fallback-icon: "application-x-executable";
+    click-to-exit: true;
+    case-sensitive: false;
+    sidebar-mode: false;
+
+    matching: "fuzzy";
+    sorting-method: "fzf";
+    sort: true;
+    disable-history: false;
+
+    terminal: "ghostty";
+
+    kb-cancel: "Escape,Control+bracketleft";
+    kb-mode-next: "Control+Tab,Alt+Right";
+    kb-mode-previous: "Control+ISO_Left_Tab,Alt+Left";
+    kb-row-up: "Up,Control+p";
+    kb-row-down: "Down,Control+n";
+    kb-primary-paste: "Control+V,Shift+Insert";
+    kb-move-front: "Control+a";
+    kb-move-end: "Control+e";
+    kb-move-word-back: "Control+Left";
+    kb-move-word-forward: "Control+Right";
+    kb-remove-word-back: "Control+BackSpace";
+    kb-remove-word-forward: "Control+Delete";
+}
+

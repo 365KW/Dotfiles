@@ -1,0 +1,32 @@
+#!/bin/bash
+# WiFi picker — rofi + nmcli
+
+SELECTED=$(nmcli -t -f IN-USE,SSID,SIGNAL,SECURITY device wifi list 2>/dev/null | \
+    awk -F: '
+        $1 == "*" { printf "  %-30s  %3s%%  %s\n", $2, $3, $4; next }
+        $1 != "*" { printf "󰖩 %-30s  %3s%%  %s\n", $2, $3, $4 }
+    ' | \
+    rofi -dmenu -theme "/usr/share/rofi/themes/android_notification.rasi" -i -p "WiFi" 2>/dev/null)
+
+[ -z "$SELECTED" ] && exit 0
+
+SSID=$(echo "$SELECTED" | awk '{print $2}')
+
+CURRENT=$(nmcli -t -f IN-USE,SSID device wifi list 2>/dev/null | grep "^\*:" | cut -d: -f2)
+if [ "$SSID" = "$CURRENT" ]; then
+    notify-send "WiFi" "Already connected to $SSID"
+    exit 0
+fi
+
+SAVED=$(nmcli -t -f NAME connection show 2>/dev/null | grep -Fx "$SSID")
+if [ -n "$SAVED" ]; then
+    nmcli connection up "$SSID" 2>/dev/null && \
+        notify-send "WiFi" "Connected to $SSID" || \
+        notify-send -u critical "WiFi" "Failed to connect to $SSID"
+else
+    PASS=$(rofi -dmenu -p "Password for $SSID" -password 2>/dev/null)
+    [ -z "$PASS" ] && exit 0
+    nmcli device wifi connect "$SSID" password "$PASS" 2>/dev/null && \
+        notify-send "WiFi" "Connected to $SSID" || \
+        notify-send -u critical "WiFi" "Failed to connect to $SSID"
+fi
