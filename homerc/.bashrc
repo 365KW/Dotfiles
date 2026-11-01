@@ -73,3 +73,7 @@ __path_prepend "$HOME/.opencode/bin"
 __path_prepend "$HOME/.local/share/JetBrains/Toolbox/scripts"
 unset -f __path_prepend
 export PATH
+
+
+# INIT
+fastfetch

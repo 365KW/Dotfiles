@@ -16,8 +16,6 @@ super + v
 super + n
     $HOME/.local/bin/rofi-wifi
 
-
-
 super + shift + q
     bspc node -c
 
@@ -108,14 +106,11 @@ super + r + {Left,Right,Up,Down}
 super + r + shift + {Left,Right,Up,Down}
     bspc node -z {left,right,top,bottom} {40 0,-40 0,0 40,0 -40}
 
-
-
 super + period
     dunstctl close
 
 super + shift + period
     dunstctl close-all
-
 
 super + shift + c
     pkill -USR1 -x sxhkd
@@ -124,12 +119,10 @@ super + shift + r
     bspc wm -r
 
 super + shift + e
-    sh -c '[ "$(printf "yes\nno\n" | dmenu -p "Exit bspwm?")" = yes ] && pkill -x bspwm'
+    sh -c '[ "$(printf "yes\nno\n" | dmenu -p "Exit bspwm?")" = yes ] && bspc quit'
 
 super + shift + l
     slock
-
-
 
 XF86AudioRaiseVolume
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
